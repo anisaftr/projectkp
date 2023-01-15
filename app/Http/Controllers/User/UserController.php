@@ -107,11 +107,11 @@ class UserController extends Controller
             'nip' => Auth::guard('pengguna')->user()->nip,
             'isi_laporan' => $data['isi_laporan'],
             'tgl_peminjaman' => date('Y-m-d h:i:s'),
-            'kode_barang' => $data['kode_barang'],
-            // 'bidang' => $data['bidang'],
-            // 'nama_barang' => $data['nama_barang'],
-            // 'jumlah' => $data['jumlah'],
-            // 'level' => '0',
+            'kode_barang' => $data['kode_barang'] ?? '',
+            'bidang' => $data['bidang'] ?? '',
+            'nama_barang' => $data['nama_barang'] ?? '',
+            'jumlah' => $data['jumlah'] ?? '',
+            'level' => '0',
             'status' => '0',
         ]);
 

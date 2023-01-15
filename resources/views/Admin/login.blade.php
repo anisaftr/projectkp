@@ -31,7 +31,7 @@
             <div class="card mt-5">
                 <div class="card-body">
                     <h2 class="text-center mb-5">FORM ADMIN</h2>
-                    <form action="{{ route('pekat.register') }}" method="POST">
+                    <form action="{{ route('admin.login') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <input type="text" name="username" placeholder="Username" class="form-control">

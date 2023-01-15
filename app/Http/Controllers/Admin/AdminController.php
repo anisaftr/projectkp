@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -16,17 +19,17 @@ class AdminController extends Controller
     {
         $username = Admin::where('username', $request->username)->first();
 
-        if (!username) {
+        if (!$username) {
             return redirect()->back()->with(['pesan' => 'Username tidak terdaftar!']);
         }
 
         $password = Hash::check($request->password, $username->password);
 
-        if (!password) {
+        if (!$password) {
             return redirect()->back()->with(['pesan' => 'Password tidak sesuai!']);
         }
 
-        $auth = Auth::guard('admin')->attempt(['usernmae' => $request->username, 'password' => $request->password]);
+        $auth = Auth::guard('admin')->attempt(['username' => $request->username, 'password' => $request->password]);
 
         if($auth) {
             return redirect()->route('dashboard.index');

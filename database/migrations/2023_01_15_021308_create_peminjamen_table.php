@@ -22,7 +22,7 @@ return new class extends Migration
             $table->dateTime('tgl_peminjaman');
             $table->char('jumlah', 10);
             $table->enum('level', ['peminjaman', 'pengembalian']);
-            $table->enum('status', ['diproses', 'diterima']);
+            $table->enum('status', ['0', 'diproses', 'diterima']);
             $table->timestamps();
 
             $table->foreign('nip')->references('nip')->on('Pengguna');
