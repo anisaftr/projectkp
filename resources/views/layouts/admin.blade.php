@@ -13,7 +13,7 @@
         
         @yield('css')
 
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     
 </head>
 
@@ -27,17 +27,20 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="">
-                    <a href="">Dashboard</a>
+                <li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.index') }}">Dashboard</a>
                 </li>
                 <li class="">
-                    <a href="">Pengaduan</a>
+                    <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
                 </li>
                 <li class="active">
-                    <a href="">Admin</a>
+                    <a href="{{ route('petugas.index') }}">Admin</a>
                 </li>
                 <li class="">
-                    <a href="">Masyarakat</a>
+                    <a href="{{ route('user.index') }}">User</a>
+                </li>
+                <li class="">
+                    <a href="{{ route('laporan.index') }}">Laporan</a>
                 </li>
             </ul>
         </nav>
@@ -61,7 +64,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <a href="" class="btn btn-white btn-sm">Login</a>
+                            <a href="" class="btn btn-white btn-sm"></a>
                         </ul>
                     </div>
                 </div>
