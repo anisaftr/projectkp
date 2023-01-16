@@ -46,18 +46,18 @@
                                 <tr>
                                     <th>Tanggal Peminjaman</th>
                                     <td>:</td>
-                                    <td>{{ $peminjaman->tgl_peminjaman ?? '' }}</td>
+                                    <td>{{ $peminjaman->tgl_peminjaman  }}</td>
                                 </tr>
                                 <tr>
                                     <th>Isi Laporan</th>
                                     <td>:</td>
-                                    <td>{{ $peminjaman->isi_laporan ?? '' }}</td>
+                                    <td>{{ $peminjaman->isi_laporan  }}</td>
                                 </tr>
                                 <tr>
                                     <th>Status</th>
                                     <td>:</td>
                                     <td>
-                                    @if {{$peminjaman->status == '0'}}
+                                    @if ($peminjaman->status == '0')
                                         <a href="" class="badge badge-danger">Pending</a>
                                     @elseif($peminjaman->status == 'proses')
                                         <a href="" class="badge badge-warning text-white">Proses</a>

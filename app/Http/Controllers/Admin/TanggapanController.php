@@ -12,7 +12,7 @@ class TanggapanController extends Controller
 {
     public function createOrUpdate(Request $request)
     {
-        $peminjaman = Peminjaman::where('id_peminjaman', $request->id_peminjaman)->first();
+        // $peminjaman = Peminjaman::where('id_peminjaman', $request->id_peminjaman)->first();
 
         $tanggapan = Tanggapan::where('id_peminjaman', $request->id_peminjaman)->first();
 

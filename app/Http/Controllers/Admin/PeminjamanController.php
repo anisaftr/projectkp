@@ -21,8 +21,10 @@ class PeminjamanController extends Controller
     {
         $peminjaman = Peminjaman::where('id_peminjaman', $id_peminjaman)->first();
 
-        $tanggapan = Tanggapan::where('id_peminjaman', $id_peminjaman)->first();
+        // $tanggapan = Tanggapan::where('id_peminjaman', $id_peminjaman)->first();
 
-        return view('Admin.Peminjaman.show', ['peminjaman' => $peminjaman, 'tanggapan' => $tanggapan]);
+        return view('Admin.Peminjaman.show', ['peminjaman' => $peminjaman]);
     }
+
+    
 }
