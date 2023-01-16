@@ -30,16 +30,16 @@
                 <li class="{{ Request::is('admin/dashboard') ? 'active' : '' }}">
                     <a href="{{ route('dashboard.index') }}">Dashboard</a>
                 </li>
-                <li class="">
+                <li class="{{ Request::is('admin/peminjaman') ? 'active' : '' }}">
                     <a href="{{ route('peminjaman.index') }}">Peminjaman</a>
                 </li>
-                <li class="active">
+                <li class="{{ Request::is('admin/admin') ? 'active' : '' }}">
                     <a href="{{ route('petugas.index') }}">Admin</a>
                 </li>
-                <li class="">
+                <li class="{{ Request::is('admin/user') ? 'active' : '' }}">
                     <a href="{{ route('user.index') }}">User</a>
                 </li>
-                <li class="">
+                <li class="{{ Request::is('admin/laporan') ? 'active' : '' }}">
                     <a href="{{ route('laporan.index') }}">Laporan</a>
                 </li>
             </ul>
@@ -64,7 +64,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <a href="" class="btn btn-white btn-sm"></a>
+                            <a href="" class="btn btn-white btn-sm">{{ Auth::guard('admin')->user()->nama_admin }}</a>
                         </ul>
                     </div>
                 </div>

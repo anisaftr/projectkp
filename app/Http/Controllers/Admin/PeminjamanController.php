@@ -4,16 +4,21 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Peminjaman;
 
 class PeminjamanController extends Controller
 {
     public function index()
     {
-        return view('Admin.Peminjaman.index');
+        $peminjaman = Peminjaman::orderBy('tgl_peminjaman', 'desc')->get();
+
+        return view('Admin.Peminjaman.index', ['peminjaman' => $peminjaman]);
     }
 
     public function show($id_peminjaman)
     {
-        
+        $peminjaman = Peminjaman::where('id_peminjaman', $id_peminjaman)->first();
+
+        return view('Admin.Peminjaman.show', ['peminjaman' => $peminjaman]);
     }
 }
