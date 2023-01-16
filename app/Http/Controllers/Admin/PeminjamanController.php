@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Peminjaman;
+use App\Models\Tanggapan;
+
 
 class PeminjamanController extends Controller
 {
@@ -19,6 +21,8 @@ class PeminjamanController extends Controller
     {
         $peminjaman = Peminjaman::where('id_peminjaman', $id_peminjaman)->first();
 
-        return view('Admin.Peminjaman.show', ['peminjaman' => $peminjaman]);
+        $tanggapan = Tanggapan::where('id_peminjaman', $id_peminjaman)->first();
+
+        return view('Admin.Peminjaman.show', ['peminjaman' => $peminjaman, 'tanggapan' => $tanggapan]);
     }
 }
