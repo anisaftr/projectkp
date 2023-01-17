@@ -9,11 +9,15 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('Admin.Masyarakat.index');
+        $user = User::all();
+        
+        return view('Admin.User.index', ['user' => $user]);
     }
 
     public function show($nip)
     {
-        return view('Admin.User.show');
+        $user = User::where('nip', $nip)->first();
+
+        return view('Admin.User.show', ['user' => $user]);
     }
 }

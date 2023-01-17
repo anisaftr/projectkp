@@ -13,6 +13,20 @@
         
         @yield('css')
 
+        <style>  
+        .btn-purple {
+            background: #6a70fc;
+            border: 1px solid #6a70fc;
+            color: #fffff;
+        }
+
+        .btn-purple:hover {
+            background: #6a70fc;
+            border: 1px solid #6a70fc;
+            color: #fffff;
+        }
+        </style>
+
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     
 </head>
