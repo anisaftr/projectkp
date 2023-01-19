@@ -42,7 +42,7 @@ Route::prefix('admin')->group(function() {
         Route::resource('petugas', PetugasController::class);
         
         //user
-        Route::resource('user', UserController::class);
+        Route::resource('pengguna', UserController::class);
         
         //laporan
         Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');

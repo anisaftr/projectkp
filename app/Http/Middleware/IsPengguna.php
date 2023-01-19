@@ -17,7 +17,7 @@ class IsPengguna
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::guard('user')->check()) {
+        if (Auth::guard('pengguna')->check()) {
             return $next($request);  
         }
         

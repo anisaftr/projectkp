@@ -9,15 +9,15 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = User::all();
+        $pengguna = Pengguna::all();
         
-        return view('Admin.User.index', ['user' => $user]);
+        return view('Admin.Pengguna.index', ['pengguna' => $pengguna]);
     }
 
     public function show($nip)
     {
-        $user = User::where('nip', $nip)->first();
+        $pengguna = Pengguna::where('nip', $nip)->first();
 
-        return view('Admin.User.show', ['user' => $user]);
+        return view('Admin.Pengguna.show', ['pengguna' => $pengguna]);
     }
 }
