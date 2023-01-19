@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PeminjamanController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PenggunaController;
+use App\Http\Controllers\Admin\PengembalianController;
+use App\Http\Controllers\Admin\TanggapanController;
+use App\Http\Controllers\Admin\LaporanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,35 +39,37 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/register/auth', [UserController::class, 'register'])->name('pekat.register');
 });
 
-Route::prefix('admin')->group(function() {
+
 
     Route::middleware(['isAdmin'])->group(function() {
+
         //petugas
-        Route::resource('petugas', PetugasController::class);
+        Route::resource('petugas', PeminjamanController::class);
         
         //user
-        Route::resource('pengguna', UserController::class);
+        Route::resource('pengguna', PenggunaController::class);
         
         //laporan
         Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
     });
 
-    Route::middleware(['isPetugas'])->group(function() {
-        //dashboard
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-        
-        //peminjaman
-        Route::resource('peminjaman', PeminjamanController::class);
-        
-        //tanggapan
-        Route::post('tanggapan/createOrUpdate', [TanggapanController::class, 'createOrUpdate'])->name('tanggapan.createOrUpdate');
-        
-        //logout
-        Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
-    });
 
-    Route::middleware(['isGuest'])->group(function() {
-        Route::get('/', [AdminController::class, 'formLogin'])->name('admin.formLogin');
-        Route::post('/login', [AdminController::class, 'login'])->name('admin.login');
-    });
-});
+    
+    // Route::middleware(['isPetugas'])->group(function() {
+    //     //dashboard
+    //     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+        
+    //     //peminjaman
+    //     Route::resource('peminjaman', PeminjamanController::class);
+        
+    //     //tanggapan
+    //     Route::post('tanggapan/createOrUpdate', [TanggapanController::class, 'createOrUpdate'])->name('tanggapan.createOrUpdate');
+        
+    //     //logout
+    //     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+    // });
+
+    // Route::middleware(['isGuest'])->group(function() {
+    //     Route::get('/', [AdminController::class, 'formLogin'])->name('admin.formLogin');
+    //     Route::post('/login', [AdminController::class, 'login'])->name('admin.login');
+    // });

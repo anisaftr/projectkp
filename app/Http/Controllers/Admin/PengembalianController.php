@@ -7,7 +7,7 @@ use App\Models\Pengembalian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class PetugasController extends Controller
+class PengembalianController extends Controller
 {
     public function index()
     {

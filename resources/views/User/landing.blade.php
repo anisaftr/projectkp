@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 @endsection
 
-@section('title', 'PEKAT - Pengaduan Masyarakat')
+@section('title', 'ASET - Peminjaman Aset')
 
 @section('content')
 {{-- Section Header --}}
@@ -13,8 +13,8 @@
         <div class="container">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <h4 class="semi-bold mb-0 text-white">PEKAT</h4>
-                    <p class="italic mt-0 text-white">Pengaduan Masyarakat</p>
+                    <h4 class="semi-bold mb-0 text-white">ASET</h4>
+                    <p class="italic mt-0 text-white">Peminjaman Aset</p>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,8 +48,8 @@
     </nav>
 
     <div class="text-center">
-        <h2 class="medium text-white mt-3">Layanan Pengaduan Masyarakat</h2>
-        <p class="italic text-white mb-5">Sampaikan laporan Anda langsung kepada yang pemerintah berwenang</p>
+        <h2 class="medium text-white mt-3">Layanan Aset</h2>
+        <p class="italic text-white mb-5">Peminjaman dan Pengembalian Aset</p>
     </div>
 
     <div class="wave wave1"></div>
@@ -72,7 +72,7 @@
                 <div class="alert alert-{{ Session::get('type') }}">{{ Session::get('pengaduan') }}</div>
             @endif
 
-            <div class="card mb-3">Tulis Laporan Disini</div>
+            <div class="card mb-3">Tulis Peminjaman</div>
             <form action="{{ route('pekat.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
@@ -91,7 +91,7 @@
 <div class="pengaduan mt-5">
     <div class="bg-purple">
         <div class="text-center">
-            <h5 class="medium text-white mt-3">JUMLAH LAPORAN SEKARANG</h5>
+            <h5 class="medium text-white mt-3">JUMLAH PEMINJAMAN</h5>
             <h2 class="medium text-white">10</h2>
         </div>
     </div>
@@ -100,7 +100,7 @@
 <div class="mt-5">
     <hr>
     <div class="text-center">
-        <p class="italic text-secondary">© 2021 Ihsanfrr • All rights reserved</p>
+        <p class="italic text-secondary">© 2023 Kominfo • All rights reserved</p>
     </div>
 </div>
 {{-- Modal --}}

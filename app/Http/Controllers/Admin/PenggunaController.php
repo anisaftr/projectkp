@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pengguna;
 
-class UserController extends Controller
+class PenggunaController extends Controller
 {
     public function index()
     {
